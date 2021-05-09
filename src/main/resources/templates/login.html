@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Đăng nhập</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .el-form {
+            padding: 1px;
+        }
+
+        form {
+            margin: auto;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/login}" th:object="${admin}" method="post" class="p-3">
+        <div class="container">
+            <div class="text-center">
+                <img style="height: 180px"
+                     src="https://user-images.githubusercontent.com/33534455/104335968-7c739580-5526-11eb-84e6-7f26f687e439.jpg"
+                     alt="Avatar" class="rounded-3 img-thumbnail">
+            </div>
+            <div class="el-form mt-2">
+                <label for="uname"><b>Username</b></label>
+                <input class="form-control shadow-none" id="uname" type="text" placeholder="Enter username" th:field="*{username}"
+                       required>
+            </div>
+            <div class="el-form mt-2">
+                <label for="psw"><b>Password</b></label>
+                <input class="form-control shadow-none" id="psw" type="password" placeholder="Enter password" th:field="*{password}"
+                       required>
+            </div>
+            <button type="submit" class="btn btn-success mt-2 w-100 shadow-none" >Login</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
